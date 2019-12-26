@@ -1,0 +1,92 @@
+//充满父容器
+.fillParent() {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+//一切页面都应该充满父容器
+body,
+#app {
+  .fillParent();
+  overflow: hidden;
+}
+
+//修复el-input-number样式错误
+.el-input-number i {
+  line-height: inherit !important;
+}
+
+//我的整体布局
+.myFrame {
+  @header-height: 60px;
+  @footer-height: 30px;
+  @header-footer-height: @header-height+ @footer-height;
+  @header-background-color: #49188a;
+  .el-header {
+    height: @header-height;
+    background-color: @header-background-color;
+    color: white;
+    .el-menu {
+      background-color: @header-background-color;
+      color: white;
+    }
+    //顶部链接充满li
+    .el-menu--horizontal > .el-menu-item {
+      font-weight: 500;
+      font-size: 23px;
+    }
+    .el-menu--horizontal > .el-menu-item a,
+    .el-menu--horizontal > .el-menu-item a:hover,
+    .el-menu--horizontal > .el-menu-item li:hover {
+      width: 100%;
+      height: 100%;
+      display: block;
+      text-decoration: none;
+    }
+    .el-menu--horizontal > .el-menu-item {
+      a {
+        color: white;
+      }
+      color: white;
+    }
+    .el-menu--horizontal > .el-menu-item:hover {
+      a {
+        color: black;
+      }
+      color: black;
+      background: white;
+    }
+  }
+
+  .el-footer {
+    height: @footer-height;
+    background: #333333;
+    color: #aaaaaa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .el-main {
+    height: calc(~"100% - " @header-footer-height);
+  }
+}
+
+//键值对样式
+.fieldStyle {
+  .field-key,
+  .field-value {
+    font-family: "Ubuntu Mono", Consolas;
+    font-size: 26px;
+  }
+
+  .field-key {
+    color: #888888;
+
+    &::after {
+      content: " ：";
+    }
+  }
+}
