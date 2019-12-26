@@ -6,6 +6,7 @@ import hashlib
 import schedule
 import threading
 from typing import Dict
+import sys
 
 app = flask.Flask(__name__,static_folder="../front/dist", static_url_path="/")
 
@@ -77,4 +78,4 @@ def worker():
 
 if __name__ == '__main__':
     threading.Thread(target=worker).start()
-    app.run(debug=True)
+    app.run(debug=True,port=int(sys.argv[1]))

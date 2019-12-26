@@ -8,7 +8,7 @@ const CompressionWebpackPlugin = require("compression-webpack-plugin")
 const webpack = require("webpack")
 const webpackConfigFilter = require("webpack-config-filter")
 
-const mode = "development"
+const mode = "production"
 // const mode = "production"
 const distPath = path.join(__dirname, "./dist")
 const genPath = path.join(__dirname, "gen")
