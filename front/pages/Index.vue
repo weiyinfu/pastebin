@@ -2,8 +2,9 @@
 <template>
   <div class="Index">
     <div class="wrapper">
+      <div>代码粘贴板</div>
       <div>
-        <el-input v-model="data.filename" placeholder="请输入标题" autofocus></el-input>
+        <el-input v-model="data.filename" placeholder="请输入标题，独特的标题能够防止跟别人撞车" autofocus></el-input>
       </div>
       <el-input
         v-model="data.content"
@@ -17,8 +18,8 @@
   </div>
 </template>
 <script>
-const axios = require("axios");
-const qs=require("querystring")
+const qs = require("querystring");
+const axios = require("../js/ajax");
 export default {
   data() {
     return {
@@ -36,7 +37,8 @@ export default {
         .then(resp => {
           console.log(resp);
           if ((resp.data = "ok")) {
-            location.href="See.html?"+qs.stringify({q:this.data.filename})
+            location.href =
+              "See.html?" + qs.stringify({ q: this.data.filename });
             this.$message("发布成功");
           } else {
             this.$message("发布失败");
@@ -56,7 +58,7 @@ export default {
   display: flex;
   justify-content: center;
   height: 100%;
-  overflow:auto ;
+  overflow: auto;
   .wrapper {
     width: 80%;
     > * {

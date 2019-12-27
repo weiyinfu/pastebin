@@ -5,10 +5,10 @@
       <div>
         <el-button-group>
           <el-button type="primary" size="mini" @click="doCopy">
-            <i class="fa fa-copy" aria-hidden="true"></i>&nbsp;复制
+            <i class="fa fa-copy"></i>&nbsp;复制
           </el-button>
           <el-button size="mini" @click="doDownload">
-            <i class="fa fa-download" aria-hidden="true"></i>&nbsp;下载
+            <i class="fa fa-download"></i>&nbsp;下载
           </el-button>
         </el-button-group>
       </div>
@@ -19,7 +19,7 @@
   </div>
 </template>
 <script>
-const axios = require("axios");
+const axios = require("../js/ajax");
 const urlParser = require("url");
 const highlight = require("highlight.js");
 const qs = require("querystring");
@@ -112,8 +112,8 @@ export default {
       border-style: solid;
       border-color: #dddddd;
       width: fit-content;
-      max-width:90%;
-      overflow:auto;
+      max-width: 90%;
+      overflow: auto;
       white-space: pre-wrap;
       height: fit-content;
       padding: 25px;
