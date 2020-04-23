@@ -9,7 +9,6 @@ import schedule
 from flask import request, jsonify
 
 static_folder = os.path.join(os.path.dirname(__file__), "../front/dist/")
-assert os.path.exists(static_folder)
 app = flask.Flask(__name__, static_url_path="/", static_folder=static_folder,)
 
 
