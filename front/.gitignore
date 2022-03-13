@@ -14,3 +14,8 @@ test.js
 gen
 pages/Test.vue
 package-lock.json
+*.lock
+.idea/
+.pytest_cache
+.pynb_checkpoints
+yarn.lock

@@ -9,7 +9,7 @@ import schedule
 from flask import request, jsonify
 
 static_folder = os.path.join(os.path.dirname(__file__), "../front/dist/")
-app = flask.Flask(__name__, static_url_path="/", static_folder=static_folder,)
+app = flask.Flask(__name__, static_url_path="/", static_folder=static_folder, )
 
 
 def md5(s):
@@ -18,7 +18,8 @@ def md5(s):
     return m.hexdigest()
 
 
-target_dir = os.path.join(os.path.expanduser("~"), "log", "pastebin")
+home = os.environ['HOME']
+target_dir = os.path.join(home, "log", "pastebin")
 if not os.path.exists(target_dir):
     os.makedirs(target_dir)
 assert os.path.exists(target_dir), f"{target_dir} not exists !"
